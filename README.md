@@ -14,13 +14,13 @@ cargo install cargo-generate
 Generate a new project:
 
 ```shell
-cargo generate --git https://github.com/Yoshanuikabundi/rust-template.git -b main -n "<name of new project>"
+cargo generate --git https://github.com/Yoshanuikabundi/longan-nano-template.git -b main -n "<name of new project>"
 ```
 
 Leave blank any prompts where you have privacy concerns. From cargo-generate version 0.9.0, the following should work:
 
 ```shell
-cargo generate --git https://github.com/Yoshanuikabundi/rust-template.git -b main -n "<name of new project>" -d licensor="<your name>" -d github_username="<your username>"
+cargo generate --git https://github.com/Yoshanuikabundi/longan-nano-template.git -b main -n "<name of new project>" -d licensor="<your name>" -d github_username="<your username>"
 ```
 
 {% endcomment -%}
