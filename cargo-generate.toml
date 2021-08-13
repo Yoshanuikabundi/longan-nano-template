@@ -1,0 +1,12 @@
+[template]
+exclude = [".github", "src/ferris.raw"]
+
+[placeholders.licensor]
+type = "string"
+prompt = "Who should the license be attributed to?"
+default = "The Developers"
+
+[placeholders.github_username]
+type = "string"
+prompt = "What is the GitHub Username that this crate will be available from?"
+default = ""

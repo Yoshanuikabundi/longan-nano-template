@@ -8,7 +8,7 @@
 * Respect that people have differences of opinion and that every design or implementation choice carries a trade-off and numerous costs. There is seldom a right answer.
 * Please keep unstructured critique to a minimum. If you have solid ideas you want to experiment with, make a fork and see how it works.
 * We will exclude you from interaction if you insult, demean or harass anyone. That is not welcome behavior. We interpret the term "harassment" as including the definition in the [Citizen Code of Conduct](http://citizencodeofconduct.org/); if you have any lack of clarity about what might be included in that concept, please read their definition. In particular, we don't tolerate behavior that excludes people in socially marginalized groups.
-* Private harassment is also unacceptable. No matter who you are, if you feel you have been or are being harassed or made uncomfortable by a community member, please contact one of the channel ops or any of the [RISC-V team][team] immediately. Whether you're a regular contributor or a newcomer, we care about making this community a safe place for you and we've got your back.
+* Private harassment is also unacceptable. No matter who you are, if you feel you have been or are being harassed or made uncomfortable by a community member, please contact one of the channel ops or any of the maintainers immediately. Whether you're a regular contributor or a newcomer, we care about making this community a safe place for you and we've got your back.
 * Likewise any spamming, trolling, flaming, baiting or other attention-stealing behavior is not welcome.
 
 ## Moderation
@@ -31,5 +31,3 @@ And if someone takes issue with something you said or did, resist the urge to be
 The enforcement policies listed above apply to all official embedded WG venues; including official IRC channels (#rust-embedded); GitHub repositories under rust-embedded; and all forums under rust-embedded.org (forum.rust-embedded.org).
 
 *Adapted from the [Node.js Policy on Trolling](http://blog.izs.me/post/30036893703/policy-on-trolling) as well as the [Contributor Covenant v1.3.0](https://www.contributor-covenant.org/version/1/3/0/).*
-
-[team]: https://github.com/rust-embedded/wg#the-riscv-team

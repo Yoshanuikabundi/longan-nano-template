@@ -1,4 +1,4 @@
-#![doc = include_str!("README.md")]
+#![doc = include_str!("../README.md")]
 
 #![no_std]
 
@@ -9,13 +9,11 @@ use embedded_graphics::pixelcolor::Rgb565;
 use embedded_graphics::prelude::*;
 use embedded_graphics::primitives::Rectangle;
 use embedded_graphics::{primitive_style, text_style};
-use longan_nano::hal::{pac, prelude::*};
 use longan_nano::lcd::Lcd;
-use riscv_rt::entry;
 
 const FERRIS: &[u8] = include_bytes!("ferris.raw");
 
-pub fn draw_ferris((width: i32, height: i32), lcd: &mut Lcd) {
+pub fn draw_ferris(width: i32, height: i32, lcd: &mut Lcd) {
     // Clear screen
     Rectangle::new(Point::new(0, 0), Point::new(width - 1, height - 1))
         .into_styled(primitive_style!(fill_color = Rgb565::BLACK))

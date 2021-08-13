@@ -1,13 +1,5 @@
-# {# longan-nano-template #}{{project-name}}
-
-[![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/yoshanuikabundi/{{project-name}}?label=tag&logo=github&sort=semver)](https://github.com/yoshanuikabundi/{{project-name}})
-[![Crates.io](https://img.shields.io/crates/v/{{project-name}}.svg)](https://crates.io/crates/{{project-name}})
-[![Docs.rs](https://docs.rs/{{project-name}}/badge.svg)](https://docs.rs/{{project-name}})
-[![CI](https://github.com/yoshanuikabundi/{{project-name}}/workflows/Continuous%20Integration/badge.svg)](https://github.com/yoshanuikabundi/{{project-name}}/actions)
-[![Coverage Status](https://coveralls.io/repos/github/yoshanuikabundi/{{project-name}}/badge.svg?branch=main)](https://coveralls.io/github/yoshanuikabundi/{{project-name}}?branch=main)
-[![MIT License](https://img.shields.io/github/license/yoshanuikabundi/{{project-name}})](https://github.com/yoshanuikabundi/{{project-name}}/blob/main/LICENSE-MIT)
-
-{# 
+{%- comment %} 
+# longan-nano-template
 
 Template for Rust projects on the Longan Nano development board.
 
@@ -22,10 +14,28 @@ cargo install cargo-generate
 Generate a new project:
 
 ```shell
-cargo generate --git https://github.com/Yoshanuikabundi/rust-template.git -b main
+cargo generate --git https://github.com/Yoshanuikabundi/rust-template.git -b main -n "<name of new project>"
 ```
 
- #}
+Leave blank any prompts where you have privacy concerns. From cargo-generate version 0.9.0, the following should work:
+
+```shell
+cargo generate --git https://github.com/Yoshanuikabundi/rust-template.git -b main -n "<name of new project>" -d licensor="<your name>" -d github_username="<your username>"
+```
+
+{% endcomment -%}
+
+{{"#"}} {{project-name}}
+
+{% if github_username != "" %}
+[![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/{{github_username}}/{{project-name}}?label=tag&logo=github&sort=semver)](https://github.com/{{github_username}}/{{project-name}})
+[![Crates.io](https://img.shields.io/crates/v/{{project-name}}.svg)](https://crates.io/crates/{{project-name}})
+[![Docs.rs](https://docs.rs/{{project-name}}/badge.svg)](https://docs.rs/{{project-name}})
+[![CI](https://github.com/{{github_username}}/{{project-name}}/workflows/Continuous%20Integration/badge.svg)](https://github.com/{{github_username}}/{{project-name}}/actions)
+[![Coverage Status](https://coveralls.io/repos/github/{{github_username}}/{{project-name}}/badge.svg?branch=main)](https://coveralls.io/github/{{github_username}}/{{project-name}}?branch=main)
+[![MIT License](https://img.shields.io/github/license/yoshanuikabundi/{{project-name}})](https://github.com/{{github_username}}/{{project-name}}/blob/main/LICENSE-MIT)
+
+{% endif -%}
 
 ## Building projects
 
@@ -42,14 +52,14 @@ These are all pretty easy to install on Arch:
 ```shell
 pacman -Syu rustup paru
 paru -S riscv-openocd-git  riscv-sifive-elf-gdb 
-rustup default stable
 rustup target add riscv32imac-unknown-none-elf
+rustup update stable
 ```
 
 ## License (MIT)
 
 Copyright 2019-2020 [RISC-V team][team]
-Copyright 2021 [Josh Mitchell][author]
+Copyright {{ "now" | date: "%Y" }} {{licensor}}
 
 Permission to use, copy, modify, and/or distribute this software for any purpose
 with or without fee is hereby granted, provided that the above copyright notice
@@ -66,9 +76,8 @@ THIS SOFTWARE.
 ## Code of Conduct
 
 Contribution to this crate is organized under the terms of the [Rust Code of
-Conduct][CoC]. The maintainer of this crate, [Josh Mitchell][author], promises
-to intervene to uphold that code of conduct.
+Conduct][CoC]. The maintainer of this crate promises to intervene to uphold
+that code of conduct.
 
 [CoC]: CODE_OF_CONDUCT.md
 [team]: https://github.com/rust-embedded/wg#the-risc-v-team
-[author]: https://yoshanuikabundi.me
