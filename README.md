@@ -70,7 +70,7 @@ Then build and run with Cargo as normal. Cargo will build the binary, flash it t
 cargo run
 ```
 
-## License (MIT)
+## License (ISC)
 
 Copyright 2019-2020 [RISC-V team][team]
 Copyright {{ "now" | date: "%Y" }} {{licensor}}
