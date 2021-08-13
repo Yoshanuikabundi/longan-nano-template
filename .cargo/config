@@ -1,5 +1,5 @@
 [target.riscv32imac-unknown-none-elf]
-runner = 'riscv32-elf-gdb -x openocd.gdb'
+runner = 'riscv-sifive-elf-gdb -x openocd.gdb'
 rustflags = [
   "-C", "link-arg=-Tmemory-c8.x",
   "-C", "link-arg=-Tlink.x",
