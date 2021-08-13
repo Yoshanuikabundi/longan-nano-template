@@ -2,7 +2,9 @@
 name = "{{project-name}}"
 version = "0.1.0"
 edition = "2018"
-{%- if github_username != "" %}repository = "https://github.com/{{github_username}}/{{project-name}}"{% endif %}
+{% if github_username != "" -%}
+    repository = "https://github.com/{{github_username}}/{{project-name}}"
+{% endif -%}
 license = "ISC"
 readme = "README.md"
 description = "{{project-name}}" # Description that appears in crates.io
