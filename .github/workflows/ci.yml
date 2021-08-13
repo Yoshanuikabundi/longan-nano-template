@@ -1,3 +1,4 @@
+{%- raw -%}
 on:
   push:
     branches: [ main ]
@@ -31,3 +32,4 @@ jobs:
         run: cargo check --all-features
       - name: Check examples
         run: cargo build --target riscv32imac-unknown-none-elf --examples --all-features --release
+{% endraw %}
