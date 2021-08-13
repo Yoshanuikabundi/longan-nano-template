@@ -37,7 +37,7 @@ cargo generate --git https://github.com/Yoshanuikabundi/rust-template.git -b mai
 
 {% endif -%}
 
-## Building projects
+## Building
 
 The easiest way to build {{project-name}} requires a Sipeed JTAG adapter. For methods that do not require this hardware, see the [Longan Nano board crate readme](https://github.com/riscv-rust/longan-nano).
 
@@ -54,6 +54,20 @@ pacman -Syu rustup paru
 paru -S riscv-openocd-git  riscv-sifive-elf-gdb 
 rustup target add riscv32imac-unknown-none-elf
 rustup update stable
+```
+
+### Compilation and Execution
+
+With the Longan Nano connected to your PC via the JTAG adapter, run OpenOCD in a background terminal:
+
+```shell
+sudo riscv64-linux-gnu-openocd -f sipeed-jtag.cfg -f openocd.cfg
+```
+
+Then build and run with Cargo as normal. Cargo will build the binary, flash it to the board with GDB and OpenOCD, and it will run there. Size optimisations are enabled in the debug profile, so you don't need `--release` for development:
+
+```shell
+cargo run
 ```
 
 ## License (MIT)
